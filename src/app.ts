@@ -3,7 +3,7 @@ import connectToDatabase from './connection';
 
 class App {
   public app: express.Application;
-
+  // first
   constructor() {
     this.app = express();
     this.app.use(express.json());
