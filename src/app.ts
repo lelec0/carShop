@@ -16,7 +16,7 @@ class App {
     connectToDatabase();
     this.app.listen(
       PORT,
-      () => console.log(`BR Server running here 👉 http://localhost:${PORT}`),
+      () => console.log(`Server running here 👉 http://localhost:${PORT}`),
     );
   }
 
