@@ -1,10 +1,10 @@
 import { Schema, model as createModel, Document } from 'mongoose';
 import MongoModel from './mongoModel';
-import { Car } from '../interfaces/CarInterface';
+import { Motorcycle } from '../interfaces/MotorcycleInterface';
 
-interface CarDocument extends Car, Document { }
+interface CarDocument extends Motorcycle, Document { }
 
-const carSchema = new Schema<CarDocument>({
+const motorcycleSchema = new Schema<CarDocument>({
   model: {
     type: String,
     required: true,
@@ -24,20 +24,20 @@ const carSchema = new Schema<CarDocument>({
     type: Number,
     required: true,
   },
-  doorsQty: {
+  category: {
+    type: String,
+    required: true,
+  },
+  engineCapacity: {
     type: Number,
     required: true,
   },
-  seatsQty: {
-    type: Number,
-    required: true,
-  }
 }, { versionKey: false });
 
-class CarModel extends MongoModel<Car> {
-  constructor(model = createModel('Car', carSchema)) {
+class MotorcycleModel extends MongoModel<Motorcycle> {
+  constructor(model = createModel('Motorcycle', motorcycleSchema)) {
     super(model);
   }
 }
 
-export default CarModel;
+export default MotorcycleModel;
