@@ -76,9 +76,7 @@ class MotorcycleController extends Controller<Motorcycle> {
       if (updateMotorcycle && 'error' in updateMotorcycle) {
         return res.status(400).json(updateMotorcycle);
       } 
-      return updateMotorcycle
-        ? res.status(200).json(updateMotorcycle)
-        : res.status(404).json({ error: this.errors.notFound });
+      return res.status(200).json(updateMotorcycle);
     } catch (error) {
       return res.status(404).json({ error: this.errors.notFound });
     }

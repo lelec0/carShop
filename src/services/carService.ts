@@ -4,6 +4,7 @@ import CarModel from '../models/carModel';
 
 class CarService extends Service<Car> {
   private validLength = 24;
+  
   constructor(model = new CarModel()) {
     super(model);
   }
@@ -33,6 +34,7 @@ class CarService extends Service<Car> {
       return { error: parsed.error };
     }
     const car = await this.model.update(id, body);
+    if (!car) throw new Error();
     return car;
   };
 

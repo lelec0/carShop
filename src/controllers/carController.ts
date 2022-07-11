@@ -76,9 +76,7 @@ class CarController extends Controller<Car> {
       if (updateCar && 'error' in updateCar) {
         return res.status(400).json(updateCar);
       } 
-      return updateCar
-        ? res.status(200).json(updateCar)
-        : res.status(404).json({ error: this.errors.notFound });
+      return res.status(200).json(updateCar);
     } catch (error) {
       return res.status(404).json({ error: this.errors.notFound });
     }

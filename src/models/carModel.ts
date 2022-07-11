@@ -31,7 +31,7 @@ const carSchema = new Schema<CarDocument>({
   seatsQty: {
     type: Number,
     required: true,
-  }
+  },
 }, { versionKey: false });
 
 class CarModel extends MongoModel<Car> {

@@ -1,4 +1,5 @@
-import { Motorcycle, MotorcycleSchema } from '../interfaces/MotorcycleInterface';
+import { Motorcycle, 
+  MotorcycleSchema } from '../interfaces/MotorcycleInterface';
 import Service, { ServiceError } from '.';
 import MotorcycleModel from '../models/motorcycleModel';
 
@@ -7,7 +8,8 @@ class MotorcycleService extends Service<Motorcycle> {
     super(model);
   }
 
-  create = async (body: Motorcycle): Promise<Motorcycle | ServiceError | null> => {
+  create = async (body: Motorcycle):
+  Promise<Motorcycle | ServiceError | null> => {
     const parsed = MotorcycleSchema.safeParse(body);
     if (!parsed.success) {
       return { error: parsed.error };
@@ -30,6 +32,7 @@ class MotorcycleService extends Service<Motorcycle> {
       return { error: parsed.error };
     }
     const motorcycle = await this.model.update(id, body);
+    if (!motorcycle) throw new Error();
     return motorcycle;
   };
 
