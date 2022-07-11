@@ -1,7 +1,9 @@
 import {Application as App} from 'express';
+import genrericRoutes from './genrericRoutes'
 
 const Routes = (app:App) => {
-  app.get('/', (_req, res) => res.status(200).json('nosayrandom'))
+  app.use('/', genrericRoutes)
+  app.get('/xablau', (_req, res) => res.status(200).json('nosayrandom'))
 }
 
 export default Routes;
