@@ -1,15 +1,12 @@
 import express, { Router } from 'express';
 import connectToDatabase from './connection';
-import Routes from './routes';
 
 class App {
   public app: express.Application;
-  public routes = Routes;
 
   constructor() {
     this.app = express();
     this.app.use(express.json());
-    this.routes(this.app);
   }
 
   public startServer(PORT: string | number = 3001): void {
