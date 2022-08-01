@@ -44,7 +44,7 @@ docker-compose up -d
 Lembre-se de parar o mongo se estiver usando localmente na porta padrão (27017), ou adapte, caso queria fazer uso da aplicação em containers
 Esses serviços irão inicializar um container chamado car_shop e outro chamado car_shop_db.
 
-A partir daqui você pode rodar o container car_shop via CLI ou abri-lo no VS Code.
+A partir daqui você pode rodar o container car_shop via CLI ou abri-lo no VS Code.   
 Use o comando:
  ```
 docker exec -it car_shop bash
